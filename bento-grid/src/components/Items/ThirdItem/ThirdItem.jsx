@@ -1,11 +1,14 @@
+import * as SC from "./ThirdItemStyled"
+
+import calendar from "../../../assets/images/calendar.svg"
 const ThirdItem = () => {
   return (
-  <li> 
+  <SC.ThirdItemStyled> 
     <h3>Maintain a consistent posting schedule.</h3>
-    <div>
-        <img src="../../../assets/images/calendar.svg" alt="calendar" />
-    </div>
-  </li>
+    <SC.Thumb>
+        <img src={calendar} alt="calendar" />
+    </SC.Thumb>
+  </SC.ThirdItemStyled>
 );
 };
 

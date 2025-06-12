@@ -1,15 +1,17 @@
-import DownloadButtons from "../DownloadButtons/DownloadButtons";
+import * as SC from "./HeroStyled"
+
+import DownloadLinks from "../DownloadLinks/DownloadLinks";
 
 const Hero = () => {
   return (
-    <div>
+    <SC.HeroStyled>
       <h1>A history of everything you copy</h1>
       <p>
         Clipboard allows you to track and organize everything you copy.
         Instantly access your clipboard on all your devices.
       </p>
-      <DownloadButtons />
-    </div>
+      <DownloadLinks />
+    </SC.HeroStyled>
   );
 };
 

@@ -1,18 +1,32 @@
 import Logo from "../../components/Logo/Logo";
-import * as SC from "./FooterStyled"
+import SocNets from "../../components/SocNets/SocNets";
+import * as SC from "./FooterStyled";
 const Footer = () => {
-    return ( <SC.Footer>
-<Logo/>
-<nav>
-<ul>
-    <li><a href=""></a>FAQs</li>
-    <li><a href=""></a>Contact Us</li>
-    <li><a href=""></a>Privacy Policy</li>
-    <li><a href=""></a>Press Kit</li>
-    <li><a href=""></a>Install Guide</li>
-</ul>
-</nav>
-    </SC.Footer> );
-}
- 
+  return (
+    <SC.Footer>
+      <Logo/>
+      <SC.NavStyled>
+        <ul>
+          <li>
+            <a href="#">FAQ</a>
+          </li>
+          <li>
+            <a href="#">Contact Us</a>
+          </li>
+          <li>
+            <a href="#">Privacy Policy</a>
+          </li>
+          <li>
+            <a href="#">Press Kit</a>
+          </li>
+          <li>
+            <a href="#">Install Guide</a>
+          </li>
+        </ul>
+      </SC.NavStyled>
+      <SocNets/>
+    </SC.Footer>
+  );
+};
+
 export default Footer;

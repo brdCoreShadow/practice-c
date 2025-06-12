@@ -1,15 +1,20 @@
+import * as SC from "./AccessStyled"
+
+import devicesImg from "../../assets/images/image-devices.png"
 const Access = () => {
   return (
-    <div>
-      <h3>Access Clipboard Anywhere</h3>
-      <p>
+    <SC.AccessStyled>
+      <SC.AccessContentCon>
+      <SC.AccessTitleStyled>Access Clipboard Anywhere</SC.AccessTitleStyled>
+      <SC.AccessContentStyled>
         Whether you’re on the go, or at your computer, you can access all your
         Clipboard snippets in a few simple clicks.
-      </p>
-      <div>
-        <img src="" alt="" />
-      </div>
-    </div>
+      </SC.AccessContentStyled>
+      </SC.AccessContentCon>
+      <SC.AccessThumbStyled>
+        <img src={devicesImg} alt="devices" />
+      </SC.AccessThumbStyled>
+    </SC.AccessStyled>
   );
 };
 

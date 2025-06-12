@@ -1,14 +1,19 @@
 import * as SC from "./WorkflowStyled";
 
+import blacklistIcon from "../../assets/images/icon-blacklist.svg"
+import prewivIcon from "../../assets/images/icon-preview.svg"
+import textIcon from "../../assets/images/icon-text.svg"
 const Workflow = () => {
   return (
     <SC.WorkflowStyled>
+      <SC.WorkFlowContentConStyled>
       <h3>Supercharge your workflow</h3>
       <p>We’ve got the tools to boost your productivity.</p>
-      <ul>
+      </SC.WorkFlowContentConStyled>
+      <SC.WorkflowListStyled>
         <li>
           <div>
-            <img src="" alt="" />
+            <img src={blacklistIcon} alt="blaclist" />
           </div>
           <h4>Create blacklists</h4>
           <p>
@@ -18,7 +23,7 @@ const Workflow = () => {
         </li>
         <li>
           <div>
-            <img src="" alt="" />
+            <img src={textIcon} alt="text icon" />
           </div>
           <h4>Plain text snippets</h4>
           <p>
@@ -27,14 +32,14 @@ const Workflow = () => {
         </li>
         <li>
           <div>
-            <img src="" alt="" />
+            <img src={prewivIcon} alt="preview" />
           </div>
           <h4>Sneak preview</h4>
           <p>
             Quick preview of all snippets on your Clipboard for easy access.
           </p>
         </li>
-      </ul>
+      </SC.WorkflowListStyled>
     </SC.WorkflowStyled>
   );
 };

@@ -14,7 +14,7 @@ const BurgerMenu:React.FC = () => {
                     <a href="#">Projects</a>
                 </li>
             </SC.BurgerList>
-            <button type="button">Schedule a Call</button>
+            <SC.MenuBtn type="button">Schedule a Call</SC.MenuBtn>
         </SC.MenuCon>
      );
 }

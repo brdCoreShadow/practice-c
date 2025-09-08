@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import * as SC from "./AppStyled";
 import About from "./components/About/About";
 import BurgerBtn from "./components/BurgerBtn/BurgerBtn";
@@ -10,17 +11,34 @@ import Footer from "./layouts/Footer/Footer";
 
 import Header from "./layouts/Header/Header";
 import SharedLayout from "./layouts/SharedLayout/SharedLayout";
+import { useMenuToggle } from "./hooks/useMenuToggle";
 
 const App: React.FC = () => {
+  const { isMenu, toggleMenu } = useMenuToggle();
+
+  useEffect(() => {
+    if (isMenu) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenu]);
+
   return (
     <SC.AppStyled>
       <Header>
         <Logo />
-        <BurgerBtn />
+        <BurgerBtn toggleMenu={toggleMenu} isMenu={isMenu}/>
       </Header>
-      <BurgerPortal>
-        <BurgerMenu />  
-      </BurgerPortal>
+      {isMenu && (
+        <BurgerPortal>
+          <BurgerMenu />
+        </BurgerPortal>
+      )}
       <SharedLayout>
         <Hero />
         <About />

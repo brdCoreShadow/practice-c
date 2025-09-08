@@ -29,7 +29,26 @@ const About: React.FC = () => {
     }
   };
 
-
+  const project = [
+    {
+      id: 1,
+      title: "Lean Product Roadmap",
+      date: "2019 Project",
+      product: "Brand naming & guidelines",
+    },
+    {
+      id: 2,
+      title: "New Majestic Hotel",
+      date: "2018 Project",
+      product: "Brand identity & merchandise",
+    },
+    {
+      id: 3,
+      title: "Crypto Dashboard",
+      date: "2016 Project",
+      product: "Brand identity & web design",
+    },
+  ];
 
   return (
     <SC.AboutList>
@@ -59,15 +78,40 @@ const About: React.FC = () => {
       <li>
         <SC.PicCon>
           <SC.PicThumb>
-            <img src={slide ===1 ? slidePicMob1 : slide === 2 ? slidePicMob2 : slidePicMob3} alt="pic" />
+            <img
+              src={
+                slide === 1
+                  ? slidePicMob1
+                  : slide === 2
+                  ? slidePicMob2
+                  : slidePicMob3
+              }
+              alt="pic"
+            />
           </SC.PicThumb>
           <SC.PicConContent>
-            <h3>Lean Product Roadmap</h3>
-            <p>2019 Project</p>
+            <h3>
+              {slide === 1
+                ? project[0].title
+                : slide === 2
+                ? project[1].title
+                : project[2].title}
+            </h3>
+            <p>
+              {slide === 1
+                ? project[0].date
+                : slide === 2
+                ? project[1].date
+                : project[2].date}
+            </p>
           </SC.PicConContent>
         </SC.PicCon>
         <SC.SliderCon>
-          <h3>Brand naming & guidelines</h3>
+          <h3> {slide === 1
+                ? project[0].product
+                : slide === 2
+                ? project[1].product
+                : project[2].product}</h3>
           <SC.SliderBtnCon>
             <button type="button" onClick={handlePrevSlide}>
               <img src={backBtnPic} alt="prev" />

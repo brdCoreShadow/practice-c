@@ -15,6 +15,9 @@ export const AboutList = styled.ul`
 
     background-color: #f94f4f;
   }
+
+  & > li:nth-of-type(3) {
+  }
 `;
 
 export const StrategicPicThumb = styled.div`
@@ -186,3 +189,36 @@ export const PicConContent = styled.div`
     line-height: 1.33;
   }
 `;
+
+export const SliderCon = styled.div`
+  padding-top: 64px;
+  padding-bottom: 64px;
+  padding-left: 24px;
+  padding-right: 24px;
+
+  background-color: #191921;
+
+  & > h3 {
+    margin-bottom: 24px;
+
+    font-size: 32px;
+    line-height: 1.25;
+    font-weight: 800;
+
+    color: #fff;
+  }
+`;
+
+export const SliderBtnCon = styled.div`
+display: flex;
+flex-direction: row;
+align-items: center;
+
+& > button:not(:last-of-type){
+    margin-right: 16px;
+}
+
+& > button{
+    background-color: transparent;
+}
+`

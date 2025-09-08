@@ -8,8 +8,29 @@ import slidePicMob1 from "../../assets/images/mobile/image-slide-1.jpg";
 import slidePicMob2 from "../../assets/images/mobile/image-slide-2.jpg";
 import slidePicMob3 from "../../assets/images/mobile/image-slide-3.jpg";
 import strategicPicMob from "../../assets/images/mobile/image-strategic.jpg";
+import { useState } from "react";
 
 const About: React.FC = () => {
+  const [slide, setSlide] = useState(1);
+
+  const handleNextSlide = () => {
+    if (slide < 3) {
+      setSlide((prev) => prev + 1);
+    } else {
+      setSlide(1);
+    }
+  };
+
+  const handlePrevSlide = () => {
+    if (slide > 1) {
+      setSlide((prev) => prev - 1);
+    } else {
+      setSlide(3);
+    }
+  };
+
+
+
   return (
     <SC.AboutList>
       <li>
@@ -38,24 +59,24 @@ const About: React.FC = () => {
       <li>
         <SC.PicCon>
           <SC.PicThumb>
-            <img src={slidePicMob1} alt="pic" />
+            <img src={slide ===1 ? slidePicMob1 : slide === 2 ? slidePicMob2 : slidePicMob3} alt="pic" />
           </SC.PicThumb>
           <SC.PicConContent>
             <h3>Lean Product Roadmap</h3>
             <p>2019 Project</p>
           </SC.PicConContent>
         </SC.PicCon>
-        <div>
+        <SC.SliderCon>
           <h3>Brand naming & guidelines</h3>
-          <div>
-            <button type="button">
+          <SC.SliderBtnCon>
+            <button type="button" onClick={handlePrevSlide}>
               <img src={backBtnPic} alt="prev" />
             </button>
-            <button type="button">
+            <button type="button" onClick={handleNextSlide}>
               <img src={forwardBtnPic} alt="next" />
             </button>
-          </div>
-        </div>
+          </SC.SliderBtnCon>
+        </SC.SliderCon>
       </li>
     </SC.AboutList>
   );
